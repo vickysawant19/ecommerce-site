@@ -1,13 +1,24 @@
+import React, { useState } from 'react'
 
-import "./App.css";
+import Items from './pages/navbar/Items'
+import Navbar from './pages/navbar/Navbar'
+import Sidebar from './pages/navbar/Sidebar'
+import FilterContext from './utils/FilterContext'
 
-function App() {
+const App = () => {
   return (
-    <div className="p-4">
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-    </div>
-  );
+    <FilterContext>
+      <div className="relative min-h-screen w-full">
+        <Navbar />
+        <div className="absolute w-full">
+          <Sidebar />
+        </div>
+        <div className="mt-10">
+          <Items />
+        </div>
+      </div>
+    </FilterContext>
+  )
 }
 
-export default App;
-  
+export default App
